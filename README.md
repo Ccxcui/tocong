@@ -1,5 +1,6 @@
 # tocong简介
 linux系统下爬取tucong网站的图片并存入数据库
+# 工程分析&数据库
 **scrapy工程的创建**  
 在终端使用scrapy startproject work 创建work工程  
 ![创建工程](https://github.com/Ccxcui/tocong/blob/main/show/%E5%9B%BE%E7%89%871.png)  

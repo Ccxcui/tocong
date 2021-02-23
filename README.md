@@ -14,19 +14,19 @@ linux系统下爬取tucong网站的图片并存入数据库
 打开相册后发现相册里的图片都是用js加载的，面对这种情况可以自己分析js，并分析ajax请求，打开chrome的开发者模式，并刷新刚刚的页面  
 ![网页刷新后](https://github.com/Ccxcui/tocong/blob/main/show/%E5%9B%BE%E7%89%876.png)
 看到提交请求的url以及返回的内容  
-![url]()
+![url](https://github.com/Ccxcui/tocong/blob/main/show/%E5%9B%BE%E7%89%877.PNG)
 拖动鼠标向下滑，我们可以看到请求的网页有规律地变化  
 Page代表页数  
 Count代表每页的图片数，为20  
 于是我们可以构造出我们要爬取页面的url  
 https://tuchong.com/rest/tags/自然/posts?page={}&count=20  
-![url-2]()
-![url-3]()
+![url-2](https://github.com/Ccxcui/tocong/blob/main/show/%E5%9B%BE%E7%89%878.png)
+![url-3](https://github.com/Ccxcui/tocong/blob/main/show/%E5%9B%BE%E7%89%879.png)
 通过对其返回的内容分析，post_id下包含了图片的内容  
 我们爬取图片的名字，地址，点赞人数，浏览人数  
 并下载到本地，并且将图片名字和url地址保存到数据库  
 **创建数据库的表**  
 用mysql workbench创建数据库tupian，utf-8格式  
-![sql-1]()
+![sql-1](https://github.com/Ccxcui/tocong/blob/main/show/%E5%9B%BE%E7%89%8710.png)
 再在tupian数据库中创建一个tupian_table表，创建2列，一列为name，一列为url，都为字符串结构  
-![sql-2]()
+![sql-2](https://github.com/Ccxcui/tocong/blob/main/show/%E5%9B%BE%E7%89%8711.png)
